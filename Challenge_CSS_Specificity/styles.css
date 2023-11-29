@@ -1,0 +1,31 @@
+body {
+  margin: 30px 50px 0 50px;
+}
+
+h1 {
+  color: blue;
+  font-family: Arial, Helvetica, serif;
+}
+
+div {
+  border: 1px solid black;
+}
+
+h1 ~ p {
+  color: red;
+  text-decoration: underline;
+  font-family: Arial, Helvetica, serif;
+}
+
+li {
+  font-family: Arial, Helvetica, serif;
+  list-style-type: none;
+}
+
+div + p {
+  color: coral;
+}
+
+p {
+  color: brown;
+}
