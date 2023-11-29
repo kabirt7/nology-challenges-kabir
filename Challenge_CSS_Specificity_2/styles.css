@@ -1,0 +1,29 @@
+p {
+  padding-left: 30px;
+}
+
+h1 ~ p {
+  color: rgb(184, 184, 184);
+  font-style: normal;
+}
+
+h1 + p {
+  font-style: italic;
+  color: black;
+}
+
+h2 ~ p {
+  text-decoration: underline;
+  color: black;
+}
+
+h3 ~ p {
+  color: blue;
+  font-style: normal;
+}
+
+h3 + p {
+  text-decoration: none;
+
+  color: rgb(184, 184, 184);
+}
