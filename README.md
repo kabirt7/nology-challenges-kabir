@@ -1,1 +1,0 @@
-# nology-challenges-kabir
