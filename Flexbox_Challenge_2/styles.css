@@ -2,6 +2,9 @@
   width: 100px;
   height: 100px;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -9,16 +12,12 @@ main {
   display: flex;
   flex-direction: column-reverse;
   gap: 15px;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
 }
 
 #horizontal {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-}
-
-#vertical {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
