@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, serif;
+  font-size: 70px;
+}
+
+.box-1 {
+  background-color: lightblue;
+}
+
+.box-2 {
+  background-color: orange;
+}
+
+.box-3 {
+  background-color: rgb(248, 81, 248);
+}
+
+.box-4 {
+  background-color: red;
+}
+
+.box-5 {
+  background-color: lime;
+}
+
+#challenge-1 {
+  display: flex;
+  justify-content: center;
+}
+
+#challenge-1 > div {
+  width: 25vw;
+  height: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#challenge-2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#challenge-2 > div {
+  width: 30vw;
+  height: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap-1 {
+  display: flex;
+}
+
+#challenge-3 > div {
+  width: 30vw;
+  height: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#challenge-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90.2vw;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
