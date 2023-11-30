@@ -1,0 +1,68 @@
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+
+main {
+  width: 600px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 15px;
+}
+
+#horizontal {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+#vertical {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+section > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  gap: 15px;
+}
+
+#card-1 {
+  background-color: rgb(210, 210, 255);
+}
+
+#card-2 {
+  background-color: rgb(251, 174, 174);
+}
+
+#card-3 {
+  background-color: rgb(181, 236, 100);
+}
+
+#card-4 {
+  background-color: rgb(250, 165, 90);
+}
+
+#card-5 {
+  background-color: rgb(253, 203, 203);
+}
+
+#card-6 {
+  background-color: rgb(186, 186, 186);
+}
+
+#card-7 {
+  background-color: rgb(222, 246, 255);
+}
+
+#card-8 {
+  background-color: rgb(98, 205, 240);
+}
