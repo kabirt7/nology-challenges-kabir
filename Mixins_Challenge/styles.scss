@@ -1,0 +1,17 @@
+@use "./mixins/mixins";
+
+.button {
+  @include mixins.font; // Assuming there is a 'font' mixin in '_mixins'
+  @include mixins.border(2px, dotted, red);
+  background-color: rgb(212, 212, 212);
+}
+
+.chip {
+  @include mixins.font; // Assuming there is a 'font' mixin in '_mixins'
+  @include mixins.border(2px, solid, blue);
+}
+
+.pill {
+  @include mixins.font; // Assuming there is a 'font' mixin in '_mixins'
+  @include mixins.border(2px, dashed, blue);
+}
