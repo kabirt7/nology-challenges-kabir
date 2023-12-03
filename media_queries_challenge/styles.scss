@@ -1,0 +1,63 @@
+@use "./partials/mixins";
+
+.flag {
+  width: 450px;
+  height: 270px;
+
+  @media (max-width: 600px) {
+    @include mixins.horizontal;
+
+    &__stripeOne {
+      background-color: black;
+      @include mixins.horizontalStripeDimensions;
+    }
+
+    &__stripeTwo {
+      background-color: red;
+      @include mixins.horizontalStripeDimensions;
+    }
+
+    &__stripeThree {
+      background-color: rgb(255, 242, 0);
+      @include mixins.horizontalStripeDimensions;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    @include mixins.vertical;
+
+    &__stripeOne {
+      background-color: black;
+      @include mixins.verticalStripeDimensions;
+    }
+
+    &__stripeTwo {
+      background-color: red;
+      @include mixins.verticalStripeDimensions;
+    }
+
+    &__stripeThree {
+      background-color: rgb(255, 242, 0);
+      @include mixins.verticalStripeDimensions;
+    }
+  }
+
+  @media (min-width: 900px) {
+    @include mixins.vertical;
+
+    &__stripeOne {
+      background-color: green;
+      @include mixins.verticalStripeDimensions;
+    }
+
+    &__stripeTwo {
+      background-color: white;
+      @include mixins.verticalStripeDimensions;
+    }
+
+    &__stripeThree {
+      background-color: orange;
+      @include mixins.verticalStripeDimensions;
+    }
+  }
+}
