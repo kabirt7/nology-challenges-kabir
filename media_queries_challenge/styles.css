@@ -9,17 +9,17 @@
   }
   .flag__stripeOne {
     background-color: black;
-    height: 270px;
+    height: 150px;
     width: 450px;
   }
   .flag__stripeTwo {
     background-color: red;
-    height: 270px;
+    height: 150px;
     width: 450px;
   }
   .flag__stripeThree {
     background-color: rgb(255, 242, 0);
-    height: 270px;
+    height: 150px;
     width: 450px;
   }
 }
@@ -31,17 +31,17 @@
   .flag__stripeOne {
     background-color: black;
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
   .flag__stripeTwo {
     background-color: red;
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
   .flag__stripeThree {
     background-color: rgb(255, 242, 0);
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
 }
 @media (min-width: 900px) {
@@ -52,16 +52,16 @@
   .flag__stripeOne {
     background-color: green;
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
   .flag__stripeTwo {
     background-color: white;
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
   .flag__stripeThree {
     background-color: orange;
     height: 450px;
-    width: 270px;
+    width: 150px;
   }
 }
