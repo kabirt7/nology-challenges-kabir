@@ -1,0 +1,67 @@
+.flag {
+  width: 450px;
+  height: 270px;
+}
+@media (max-width: 600px) {
+  .flag {
+    display: flex;
+    flex-direction: column;
+  }
+  .flag__stripeOne {
+    background-color: black;
+    height: 150px;
+    width: 450px;
+  }
+  .flag__stripeTwo {
+    background-color: red;
+    height: 150px;
+    width: 450px;
+  }
+  .flag__stripeThree {
+    background-color: rgb(255, 242, 0);
+    height: 150px;
+    width: 450px;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .flag {
+    display: flex;
+    flex-direction: row;
+  }
+  .flag__stripeOne {
+    background-color: black;
+    height: 450px;
+    width: 150px;
+  }
+  .flag__stripeTwo {
+    background-color: red;
+    height: 450px;
+    width: 150px;
+  }
+  .flag__stripeThree {
+    background-color: rgb(255, 242, 0);
+    height: 450px;
+    width: 150px;
+  }
+}
+@media (min-width: 900px) {
+  .flag {
+    display: flex;
+    flex-direction: row;
+  }
+  .flag__stripeOne {
+    background-color: green;
+    height: 450px;
+    width: 150px;
+  }
+  .flag__stripeTwo {
+    background-color: white;
+    height: 450px;
+    width: 150px;
+  }
+  .flag__stripeThree {
+    background-color: orange;
+    height: 450px;
+    width: 150px;
+  }
+}

@@ -1,0 +1,19 @@
+@mixin vertical {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin horizontalStripeDimensions {
+  height: 270px;
+  width: 450px;
+}
+
+@mixin verticalStripeDimensions {
+  height: 450px;
+  width: 270px;
+}
