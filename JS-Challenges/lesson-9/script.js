@@ -84,7 +84,7 @@ console.log(generateNumbers(0, 20, false));
 // ### Bonus
 
 // -   Add an argument to your function called `isUnique`
-// -   If this is set to true, there should be no duplicate numbers in the output
+// -   If this is set to true, there should be not duplicate numbers in the output
 
 // ### Bonus
 
