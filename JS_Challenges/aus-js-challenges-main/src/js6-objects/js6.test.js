@@ -193,7 +193,7 @@ describe("getUserAddress() tests", () => {
   });
 });
 
-xdescribe("setSafeAllergens() tests", () => {
+describe("setSafeAllergens() tests", () => {
   const allergenList = [
     "celery",
     "gluten",
@@ -294,7 +294,7 @@ xdescribe("setSafeAllergens() tests", () => {
   });
 });
 
-xdescribe("mergeFurniture() tests", () => {
+describe("mergeFurniture() tests", () => {
   const tableLocationInfo = { id: 101, location: "Bristol", sku: "bXpGsZC2j4" };
   const tableProductInfo = {
     id: 101,

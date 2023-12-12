@@ -133,15 +133,28 @@ export const getUserAddress = (user) => {
 };
 
 /**
- * A function that given a customer for the restaurant with a list of known allergies and a list of allergens in an
- * array, will attach an array of allergens safe for the customer to eat to the customer object and return it
+ * A function that given a customer for the restaurant with a list of known allergies and a list of allergens in an array,
+ * will attach an array of allergens safe for the customer to eat to the customer object and return it
  *
  * @param {{id: number, name: string, allergies: string[]}} customer - A customer for the restaurant
  * @param {string[]} allergenList - A list of all known allergens
  * @return {{id: number, name: string, allergies: string[], safeAllergens: string[]}} customer
  */
 export const setSafeAllergens = (customer, allergenList) => {
-  /* Write code here */
+  const { allergies } = customer;
+  let safeAllergens = [];
+
+  for (let i = 0; i < allergenList.length; i++) {
+    if (!allergies.includes(allergenList[i])) {
+      safeAllergens.push(allergenList[i]);
+    } else {
+      continue;
+    }
+  }
+
+  customer.safeAllergens = safeAllergens;
+
+  return customer;
 };
 
 /* Expert Challenge */
@@ -155,5 +168,6 @@ export const setSafeAllergens = (customer, allergenList) => {
  * @returns {{id: number, location: string, sku: string, name: string, price: number, isAvailable: boolean}}
  */
 export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
-  /* Write code here */
+  const mergedFurniture = { ...furnitureLocationData, ...furnitureProductData };
+  return mergedFurniture;
 };
