@@ -1,0 +1,17 @@
+.card {
+  background-color: palegreen;
+  height: 45vh;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  gap: 40px;
+
+  img {
+    border-radius: 15px;
+    height: auto;
+    width: auto;
+  }
+}

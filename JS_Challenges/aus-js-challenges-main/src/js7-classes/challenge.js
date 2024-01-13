@@ -27,11 +27,14 @@ export class Coordinate {
    * @param {number} xCoord - 22.
    * @param {number} yCoord - 20.
    */
-  constructor(xCoord, yCoord) {}
+  constructor(xCoord, yCoord) {
+    this.xCoord = xCoord;
+    this.yCoord = yCoord;
+  }
 }
 
 /**
- * Complete the Skeleton of a Alert Class below.
+ * Complete the Skeleton of an Alert Class below.
  *
  * You will need to complete the constructor.
  * It needs to accept a parameter called message.
@@ -48,14 +51,16 @@ export class Alert {
    * Create an alert.
    * @param {string} message - "Are sure you want to proceed?"
    */
-  constructor() {}
+  constructor(message) {
+    this.message = message;
+  }
 
   /**
    * Returns a string with "!!!! " + " !!!!" added to the start and end of the message key.
    * @return {string} "!!!! Are sure you want to proceed? !!!!"
    */
   printMessage() {
-    return;
+    return `!!!! ${this.message} !!!!`;
   }
 }
 
@@ -63,7 +68,9 @@ export class Alert {
  * Complete the Skeleton of a Loader Class below.
  *
  * You will need to complete the constructor.
+ *
  * It needs to accept a parameter called htmlRef.
+ *
  * htmlRef will be a mock html element and will have an innerHTML key.
  *
  * The key on the class will need to be called htmlRef.
@@ -83,17 +90,23 @@ export class Loader {
    * Create a loader.
    * @param {{innerHTML:string}} htmlRef - {innerHTML:""}
    */
-  constructor() {}
+  constructor(htmlRef) {
+    this.htmlRef = htmlRef; // key refers to htmlRef
+  }
 
   /**
    * Updates the htmlRef.innerHTML to display the loader's html.
    */
-  displayLoader() {}
+  displayLoader(loader) {
+    this.htmlRef.innerHTML = `<div class="loader"></div>`;
+  }
 
   /**
    * Updates the htmlRef.innerHTML to remove the loader's html.
    */
-  removeLoader() {}
+  removeLoader() {
+    this.htmlRef.innerHTML = "";
+  }
 }
 
 /**
@@ -125,21 +138,31 @@ export class Counter {
    * Create an counter.
    * @param {number} count - 50
    */
-  constructor() {}
+  constructor(count = 0) {
+    this.count = count;
+  }
 
   /**
    * A method that increments count by 1.
    * @return {number} 51
    */
 
-  // WRITE INCREMENT FUNCTION HERE
+  increment() {
+    return (this.count += 1);
+  }
 
   /**
    * A method that decrements count by 1 but will not go below 0.
    * @return {number} 49
    */
 
-  // WRITE DECREMENT FUNCTION HERE
+  decrement() {
+    if (this.count >= 1) {
+      this.count -= 1;
+    } else if (this.count < 1) {
+    }
+    return;
+  }
 }
 
 /**
@@ -167,22 +190,37 @@ export class Engine {
   /**
    * Create an engine.
    */
-  constructor() {}
+  constructor() {
+    this.engineIsRunning = false;
+  }
 
   /**
    * Updates engineIsRunning to true and returns a conditonal string based if the engine is already running.
    * @return {string} "Engine has started running" or "Engine is already running"
    */
   startEngine() {
-    return;
+    if (this.engineIsRunning) {
+      return "Engine is already running";
+    } else {
+      this.engineIsRunning = true;
+      return "Engine has started running";
+    }
   }
 
   /**
    * Updates engineIsRunning to false and returns a conditonal string based if the engine has already stopped.
    * @return {string} "Engine has stopped running" or "Engine has already stopped running"
    */
+  //   * If engineIsRunning is true it will set engineIsRunning to false and return "Engine has stopped running".
+  //  * If engineIsRunning is false it will return "Engine has already stopped running".
+  //  */
   stopEngine() {
-    return;
+    if (this.engineIsRunning) {
+      this.engineIsRunning = false;
+      return "Engine has stopped running";
+    } else {
+      return "Engine has already stopped running";
+    }
   }
 }
 
@@ -224,19 +262,28 @@ export class Modal {
    * @param {string} title - "Error"
    * @param {string} message - "We are currently unable to provide this service"
    */
-  constructor() {}
+  constructor(htmlRef, title, message) {
+    this.htmlRef = htmlRef;
+    this.title = title;
+    this.message = message;
+  }
 
-  /**
-   * A method that renders the html for a modal.
-   */
-
-  // WRITE RENDER HTML METHOD HERE
+  renderHtml() {
+    this.htmlRef.innerHTML = `
+    <div class="modal">
+      <h2 class="modal--title">${this.title}</h2>
+      <p class="modal--message">${this.message}</p>
+    </div>
+    `;
+  }
 
   /**
    * A method that toggles a CSS class to either show or hide the modal.
    */
 
-  // WRITE DISPLAY MODAL METHOD HERE
+  displayModal() {
+    this.htmlRef.classList.toggle("hide");
+  }
 }
 
 /**
@@ -303,14 +350,18 @@ export class BookShelf {
    * @return {string} "Learning JavaScript Design Patterns"
    */
 
-  // WRITE LATEST BOOK GETTER HERE
+  get latestBook() {
+    return this._booksOnShelf[this._booksOnShelf.length - 1];
+  }
 
   /**
    * A setter that adds a new book to the list of books.
    * @param {string} "Eloquent JavaScript"
    */
 
-  // WRITE ADD BOOK TO SHELF SETTER HERE
+  set addBookToShelf(book) {
+    this._booksOnShelf.push(book);
+  }
 }
 
 /**
@@ -363,14 +414,20 @@ export class BankAccount {
    * @param {string} email
    * @param {number} balance
    */
-  constructor() {}
+  constructor(name, email, balance = 0) {
+    this.name = name;
+    this.email = email;
+    this._balance = balance;
+  }
 
   /**
    * A getter that returns the current balance.
    * @return {number} 20
    */
 
-  // WRITE BALANCE GETTER HERE
+  get balance() {
+    return this._balance;
+  }
 
   /**
    * A method that deposits to the balance.
@@ -381,7 +438,15 @@ export class BankAccount {
    * @return {(number|string)} 40 or "Invalid input, unable to deposit"
    */
 
-  // WRITE DEPOSIT METHOD HERE
+  deposit(amount) {
+    if (typeof amount === "number" && amount > 0) {
+      return (this._balance += amount);
+    } else if (typeof amount === "string" && amount > 0) {
+      return (this._balance += Number(amount));
+    } else {
+      return "Invalid input, unable to deposit";
+    }
+  }
 
   /**
    * A method that withdraws from the balance.
@@ -392,6 +457,26 @@ export class BankAccount {
    * @param {(number|string)} toWithdraw 20 or "Bad Input" or 1000
    * @return {(number|string)} 40 or "Invalid input, unable to deposit" or "Insufficient funds, unable to withdraw"
    */
-
-  // WRITE WITH DRAW METHOD HERE
+  // The second needs to be called withdraw().
+  // * It will need to accempt a parameter which is the amount to withdraw.
+  // * This parameter can either be a number (2), a number as a string ("2"), or something else ("cheese")
+  // * You will have to handle this in the function.
+  // * You will need to handle negative numbers.
+  // *
+  // * If the amount to withdraw is greater then the balance it needs to return "Insufficient funds, unable to withdraw"
+  // * If it is a positive number it needs to be removed from the balance. The updated balance is then returned.
+  // * If it is a positive number as a string it needs to be turned into a number and removed from the balance. The updated balance is then returned.
+  // * If it is a negative number or something else the function need to return this "Invalid input, unable to withdraw".
+  // */
+  withdraw(amount) {
+    if (amount > this._balance) {
+      return "Insufficient funds, unable to withdraw";
+    } else if (typeof amount === "number" && amount > 0) {
+      return (this._balance -= amount);
+    } else if (typeof amount === "string" && amount > 0) {
+      return (this._balance -= Number(amount));
+    } else {
+      return "Invalid input, unable to withdraw";
+    }
+  }
 }

@@ -58,6 +58,7 @@ export const filterByLength = (names) => {
  * @param {number} reducer an amount to reduce each value in the array by
  * @returns {array} of values between 0 - 255
  */
+
 export const reduceNumbers = (numbers, reducer) => {
   return numbers.map((number) => {
     if (number - reducer <= 0) {

@@ -32,8 +32,22 @@ export const getFurniturePrice = (furniture) => {
  * @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
-  const newObj = { ...furniture, location: location };
-  return newObj;
+  // const newObj = { ...furniture, location: location };
+  // return newObj;
+  return { ...furniture, location };
+  // if key and value are same, can use shorthand
+
+  // furniture.location = location;
+  // return furniture;
+  // ^ THIS METHOD MODIFIES THE ORIGINAL OBJECT
+
+  // let obj = {};
+  // obj.name = furniture.name;
+  // obj.price = furniture.price;
+  // obj.location = location;
+  // return obj;
+  // ^ along with mine, this method does not alter the original object
+  // i think it would if the data was in an array
 };
 
 /**
@@ -66,15 +80,26 @@ export const makeSpaceship = (
 /**
  * A function that will attach a username to a user but only if the user doesn't already have one
  *
- * @param {{name: string, username?: string}} user - A user object
+ * @param {{name: string, username?: string}} user - A user object, ? means optional parameter
  * @param {string} username - A username to attach
  * @returns {{name: string, username: string}} User - The user object with the same username or a new one
  */
 export const setUserName = (user, username) => {
-  if (!user.username && username) {
-    let newObj = { ...user, username: username };
-    return newObj;
-  }
+  // if (!user.username && username) {
+  //   let newObj = { ...user, username: username };
+  //   return newObj;
+  // }
+  // return user;
+
+  // if (!("username" in user)) {
+  //   user.username = username;
+  // }
+  // return user;
+
+  // user.username = user.username ? user.username : username;
+  // return user;
+
+  user.username ||= username;
   return user;
 };
 
@@ -86,12 +111,26 @@ export const setUserName = (user, username) => {
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
 export const splitFullNameToFirstAndLast = (customer) => {
-  let name = customer.fullName;
-  let [firstName, lastName] = name.split(" ");
+  // let name = customer.fullName;
+  // let [firstName, lastName] = name.split(" ");
+  // let newObj = { ...customer, firstName, lastName };
+  // return newObj;
 
-  let newObj = { ...customer, firstName, lastName };
+  let splitName = customer.fullName.split(" ");
+  customer.firstName = splitName[0];
+  customer.lastName = splitName[1];
+  return customer;
 
-  return newObj;
+  // let tempSubStringOne = customer["fullName"].substring(
+  //   0,
+  //   customer["fullName"].indexOf(" ")
+  // );
+  // let tempSubStringTwo = customer["fullName"].substring(
+  //   customer["fullName"].indexOf(" ") + 1
+  // );
+  // customer["firstName"] = tempSubStringOne;
+  // customer["lastName"] = tempSubStringTwo;
+  // return customer;
 };
 
 /**
@@ -141,7 +180,7 @@ export const getUserAddress = (user) => {
  * @return {{id: number, name: string, allergies: string[], safeAllergens: string[]}} customer
  */
 export const setSafeAllergens = (customer, allergenList) => {
-  const { allergies } = customer;
+  const { allergies } = customer; // the destructuring assignment, the allergies constant holds the array ["peanuts", "dairy"] that was originally part of the customer object
   let safeAllergens = [];
 
   for (let i = 0; i < allergenList.length; i++) {

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Perth"
+  },
+  {
+    "id": 2,
+    "title": "Melbourne"
+  },
+  {
+    "id": 3,
+    "title": "Sydney"
+  },
+  {
+    "id": 4,
+    "title": "Adelaide"
+  },
+  {
+    "id": 5,
+    "title": "Hobart"
+  },
+  {
+    "id": 6,
+    "title": "Albury"
+  },
+  {
+    "id": 7,
+    "title": "Bunbury"
+  },
+  {
+    "id": 8,
+    "title": "Darwin"
+  }
+]

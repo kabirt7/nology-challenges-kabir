@@ -1,0 +1,13 @@
+.navbar {
+  // padding: 50px;
+  width: calc(100vw - 100px);
+  height: 100px;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  overflow-y: auto;
+}

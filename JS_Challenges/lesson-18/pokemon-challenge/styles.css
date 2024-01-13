@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.card-container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.card-outline {
+  height: auto;
+  width: 100px;
+  border: 2px solid black;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card-dialogue {
+  position: absolute;
+}
+
+.card-image {
+  height: 93px;
+  width: 80px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  /* height: auto;
+  width: 80px; */
+  height: auto;
+  width: 100px;
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  z-index: 1;
+}
